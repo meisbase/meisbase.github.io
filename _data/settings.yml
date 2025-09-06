@@ -22,4 +22,4 @@ social:
 - {icon: 'linkedin', link: 'https://linkedin.com/in/lenpaul'}
 
 contacts:
-- {name: 'Mei-Yu Kuo', title: 'PhD student', department: 'Sociology', institution: 'The Ohio State University', institution_address: '1885 Neil Ave, Columbus, OH 43210', email: 'kuo.355@buckeyemail.osu.edu', office: '056', image: 'assets/img/contact.jpg'}
+- {name: 'Mei-Yu Kuo', title: 'PhD student', department: 'Sociology', institution: 'The Ohio State University', institution_address: '1885 Neil Ave, Columbus, OH 43210', email: 'kuo.355@buckeyemail.osu.edu', image: 'assets/img/contact.jpg'}
