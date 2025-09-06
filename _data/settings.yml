@@ -16,10 +16,9 @@ courses:
 - {name: 'Stellar Structures', url: 'stellar-structures'}
 
 social:
-- {icon: 'github', link: 'https://github.com/LeNPaul'}
-- {icon: 'twitter', link: 'https://twitter.com/paululele'}
-- {icon: 'instagram', link: 'https://instagram.com/paululele'}
-- {icon: 'linkedin', link: 'https://linkedin.com/in/lenpaul'}
+- {icon: 'github', link: 'https://github.com/meisbase'}
+- {icon: 'twitter', link: 'https://x.com/mei_yu_kuo?s=21&t=5XKxEUze9sVszQssf2j_QA'}
+- {icon: 'linkedin', link: 'www.linkedin.com/in/mei-yu-kuo-456a81301'}
 
 contacts:
 - {name: 'Mei-Yu Kuo', title: 'PhD student', department: 'Sociology', institution: 'The Ohio State University', institution_address: '1885 Neil Ave, Columbus, OH 43210', email: 'kuo.355@buckeyemail.osu.edu', image: 'assets/img/contact.jpg'}
