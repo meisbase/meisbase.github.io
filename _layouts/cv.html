@@ -7,27 +7,14 @@ layout: default
 <div class="row g-5 mb-5">
   <div>
     <h3 class="fw-bold border-bottom pb-3 mb-5">CV</h3>
-    <div class="row g-5 mb-5">
-      <div class="col-md-2">
-        <h4>Education</h4>
-      </div>
-      <div class="col-md-10">
-        {% for section in site.data.cv.education %}
-          <p class="fw-bold">{{ section.title }}</p>
-          <p>{{ section.description }}</p>
-        {% endfor %}
-      </div>
-    </div>
-    <div class="row g-5 mb-5">
-      <div class="col-md-2">
-        <h4>Academic Experience</h4>
-      </div>
-      <div class="col-md-10">
-        {% for section in site.data.cv.academic-experience %}
-          <p class="fw-bold">{{ section.title }}</p>
-          <p>{{ section.description }}</p>
-        {% endfor %}
-      </div>
+
+    <!-- Embedded PDF -->
+    <div class="text-center">
+      <iframe src="{{ '/assets/cv.pdf' | relative_url }}" 
+              width="80%" height="800px" style="border:none;">
+        This browser does not support PDFs. 
+        <a href="{{ '/assets/cv.pdf' | relative_url }}">Download CV</a>.
+      </iframe>
     </div>
   </div>
 </div>
