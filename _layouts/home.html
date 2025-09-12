@@ -10,40 +10,65 @@ layout: default
   }
   .home-container {
     display: grid;
-    grid-template-rows: 1fr 1fr; /* top half, bottom half */
+    grid-template-rows: 1fr auto; /* main content + sns footer */
     height: 100vh;
+  }
+  .main-content {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
   }
   .about-photo {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* split into two columns */
+    grid-template-columns: 1fr 1fr;
     align-items: center;
     padding: 1rem;
     overflow: hidden;
   }
   .updates {
     padding: 1rem;
-    overflow-y: auto; /* updates scroll inside this box if too many */
+    overflow-y: auto;
+  }
+  .footer-sns {
+    text-align: center;
+    padding: 0.5rem;
+    border-top: 1px solid #ddd;
+  }
+  .footer-sns a {
+    margin: 0 0.5rem;
+    text-decoration: none;
   }
 </style>
 
 <div class="home-container">
 
-  <!-- Top: About Me + Photo -->
-  <div class="about-photo">
-    <div>
-      <h3 class="fw-bold">About me</h3>
-      {{ content }}
+  <!-- Top & middle: About + Updates -->
+  <div class="main-content">
+    <!-- About + photo -->
+    <div class="about-photo">
+      <div>
+        <h3 class="fw-bold">About me</h3>
+        {{ content }}
+      </div>
+      <div>
+        <img src="{{ site.github.url }}/assets/img/photo1.jpg" alt="Home" style="max-width:100%; height:auto;">
+      </div>
     </div>
-    <div>
-      <img src="{{ site.github.url }}/assets/img/photo1.jpg" alt="Home" style="max-width:100%; height:auto;">
+
+    <!-- Updates -->
+    <div class="updates">
+      <h3 class="fw-bold border-bottom pb-2 mb-3">Updates</h3>
+      {% for post in site.posts %}
+        <p><a href="{{ site.github.url }}/{{ post.url }}">{{ post.title }}</a> - {{ post.date | date: "%B %-d, %Y" }}</p>
+      {% endfor %}
     </div>
   </div>
 
-  <!-- Bottom: Updates -->
-  <div class="updates">
-    <h3 class="fw-bold border-bottom pb-2 mb-3">Updates</h3>
-    {% for post in site.posts %}
-      <p><a href="{{ site.github.url }}/{{ post.url }}">{{ post.title }}</a> - {{ post.date | date: "%B %-d, %Y" }}</p>
+  <!-- Footer SNS (auto from settings.yml) -->
+  <div class="footer-sns">
+    {% for account in site.data.settings.social %}
+      <a href="{{ account.link }}" target="_blank">
+        <i class="fab fa-{{ account.icon }}"></i>
+      </a>
     {% endfor %}
   </div>
 
