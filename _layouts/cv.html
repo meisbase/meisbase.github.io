@@ -8,13 +8,21 @@ layout: default
   <div>
     <h3 class="fw-bold border-bottom pb-3 mb-5">CV</h3>
 
-    <!-- Embedded PDF -->
-    <div class="text-center">
+    <!-- Embedded PDF (responsive) -->
+    <div class="text-center mb-4" style="max-width: 100%;">
       <iframe src="{{ '/assets/cv.pdf' | relative_url }}" 
-              width="80%" height="800px" style="border:none;">
+              width="100%" height="600px" style="border:none;">
         This browser does not support PDFs. 
         <a href="{{ '/assets/cv.pdf' | relative_url }}">Download CV</a>.
       </iframe>
+    </div>
+
+    <!-- Fallback Download Button (for mobile users) -->
+    <div class="text-center">
+      <a href="{{ '/assets/cv.pdf' | relative_url }}" download="CV.pdf" 
+         class="btn btn-primary">
+        ⬇️ Download CV
+      </a>
     </div>
   </div>
 </div>
