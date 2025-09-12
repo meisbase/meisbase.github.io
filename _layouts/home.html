@@ -2,17 +2,49 @@
 layout: default
 ---
 
-<div class="d-flex flex-column justify-content-center align-items-center" 
-     style="height:100vh; overflow:hidden; text-align:center;">
-  
-  <div class="row g-5 w-100">
-    <div class="col-md-6">
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    overflow: hidden; /* Disable page scroll */
+  }
+  .home-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr; /* top half, bottom half */
+    height: 100vh;
+  }
+  .about-photo {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* split into two columns */
+    align-items: center;
+    padding: 1rem;
+    overflow: hidden;
+  }
+  .updates {
+    padding: 1rem;
+    overflow-y: auto; /* updates scroll inside this box if too many */
+  }
+</style>
+
+<div class="home-container">
+
+  <!-- Top: About Me + Photo -->
+  <div class="about-photo">
+    <div>
       <h3 class="fw-bold">About me</h3>
       {{ content }}
     </div>
-    <div class="col-md-6">
-      <img src="{{ site.github.url }}/assets/img/photo1.jpg" alt="Home" width="100%">
+    <div>
+      <img src="{{ site.github.url }}/assets/img/photo1.jpg" alt="Home" style="max-width:100%; height:auto;">
     </div>
+  </div>
+
+  <!-- Bottom: Updates -->
+  <div class="updates">
+    <h3 class="fw-bold border-bottom pb-2 mb-3">Updates</h3>
+    {% for post in site.posts %}
+      <p><a href="{{ site.github.url }}/{{ post.url }}">{{ post.title }}</a> - {{ post.date | date: "%B %-d, %Y" }}</p>
+    {% endfor %}
   </div>
 
 </div>
