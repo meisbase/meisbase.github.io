@@ -4,3 +4,4 @@ title: "Mei-Yu Kuo" # the name of your site, e.g. ACME Corp.
 description: "Sociologist | Social Demographer | Computational Social Scientist"
 plugins:
   - jekyll-sitemap
+permalink: pretty
