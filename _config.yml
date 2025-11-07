@@ -1,4 +1,6 @@
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://meisbase.github.io/meisbase.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
 title: "Mei-Yu Kuo" # the name of your site, e.g. ACME Corp.
 description: "Sociologist | Social Demographer | Computational Social Scientist"
+plugins:
+  - jekyll-sitemap
