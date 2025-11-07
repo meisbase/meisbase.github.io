@@ -1,7 +1,5 @@
 menu:
 - {name: 'Home', url: '/'}
-- {name: 'Research', url: '/people'}
-- {name: 'Teaching', url: '/courses'}
 - {name: 'CV', url: '/cv'}
 - {name: 'Contact', url: '/contact'}
 
