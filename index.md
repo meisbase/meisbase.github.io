@@ -11,4 +11,4 @@ The second strand of her research focuses on migration, assimilation, and integr
 
 The third strand of her research addresses population aging, older adults, and retiring generations’ work and health. One project examines older workers’ relationships in the workplace and experiences of age discrimination, and how these factors impact job-related and general mental health. She is also contributing to a book chapter on aging workforces, the rise of bridge employment, and the potential vulnerabilities and opportunities for older workers.
 
-She is currently a Sociology PhD student at The Ohio State University. Mei obtained her M.A. in Sociology from National Taiwan University and her B.A. in Journalism from National Chengchi University. She welcomes contact via email at kuo.355@buckeyemail.osu.edu.
+Mei is currently a Sociology PhD student at The Ohio State University. She obtained her M.A. in Sociology from National Taiwan University and her B.A. in Journalism from National Chengchi University. She welcomes contact via email at kuo.355@buckeyemail.osu.edu.
