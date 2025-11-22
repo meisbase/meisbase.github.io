@@ -3,7 +3,7 @@ layout: home
 title: "Home"
 ---
 
-Mei-Yu Kuo ("Mei," pronounced as "May") is a sociologist and demographer studying <b>gender, work & family, migration, and aging</b>. She is interested in how social institutions and population dynamics  stratify society across individual and historical time.
+Mei-Yu Kuo ("Mei," pronounced as "May") is a sociologist and demographer studying <b>gender, work & family, and migration</b>. She is interested in how social institutions and population dynamics  stratify society across individual and historical time.
 
 She is broadly interested in gender inequality in contemporary societies and how social institutions interact with gender systems to produce divergent trajectories in work, family, and other life outcomes. One of her forthcoming papers in <b>Research in Social Stratification and Mobility</b>, based on her second-year paper, examines how gendered college major choices contribute to differential labor force integration across genders and create wage disparities—an angle largely neglected by previous studies on gendered employment dynamics. Another project in this strand investigates how college pathways shape young men's and women's union formation patterns through divergent socioeconomic trajectories; this work received the <b>Poster Award in the Family Demography Session at the Population Association of America Annual Meeting</b> and the <b>Best Thesis Award from the Population Association of Taiwan</b>.
 
