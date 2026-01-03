@@ -9,6 +9,4 @@ She is broadly interested in gender inequality in contemporary societies and how
 
 The second strand of her research focuses on migration, assimilation, and integration into U.S. society. She is currently working on projects examining the health outcomes of immigrants, including whether or not immigrants maintain their health advantage across generation, and what mechanisms underlie these patterns. In the future, she plans to explore how immigrants assimilate into the U.S. through gendered and cultural processes and the implications for their economic and health well-being.
 
-The third strand of her research addresses population aging, older adults, and retiring generations’ work and health. One project examines older workers’ relationships in the workplace and experiences of age discrimination, and how these factors impact job-related and general mental health. She is also contributing to a book chapter on aging workforces, the rise of bridge employment, and the potential vulnerabilities and opportunities for older workers.
-
 Mei is currently a PhD candidate in Sociology at The Ohio State University. She obtained her M.A. in Sociology from National Taiwan University and her B.A. in Journalism from National Chengchi University. She welcomes contact via email at kuo.355@buckeyemail.osu.edu.
