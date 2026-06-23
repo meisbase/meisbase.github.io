@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+{{ content }}
+
+<div class="row g-5 mb-5">
+  <div class="col-md-12">
+    <h3 class="fw-bold border-bottom pb-3 mb-5">Resources</h3>
+
+    <div style="overflow-x: auto;">
+      <table class="table table-hover align-middle">
+        <thead class="table-light">
+          <tr>
+            <th scope="col" style="min-width: 180px;">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col" style="min-width: 80px;">Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for resource in site.data.resources %}
+          <tr>
+            <td class="fw-semibold">{{ resource.name }}</td>
+            <td>{{ resource.description }}</td>
+            <td><a href="{{ resource.url }}" target="_blank" rel="noopener">Visit →</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>

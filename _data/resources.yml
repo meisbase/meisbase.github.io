@@ -1,0 +1,3 @@
+- name: "Work & Occupational Datasets"
+  description: "Curated datasets on work, occupations, and demographics of individuals, organizations, and regions — primarily U.S.-focused — covering labor market outcomes, occupational characteristics, and cross-group or cross-region comparisons."
+  url: "https://meisbase.github.io/Work-and-Occ-Datasets/"
