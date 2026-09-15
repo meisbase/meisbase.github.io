@@ -3,7 +3,7 @@ layout: home
 title: "Home"
 ---
 
-I am Mei-Yu Kuo (I go by "Mei," pronounced as "May"). I am currently a PhD candidate in Sociology at The Ohio State University.
+I am <b>Mei-Yu Kuo</b> (I go by "<b>Mei</b>," pronounced as "May"). I am currently a PhD candidate in Sociology at The Ohio State University.
 
 My primary research focuses on gender inequality, particularly workplace inequality, e.g., the gender wage gap, gendered career trajectories, and the mechanisms that produce these disparities. More broadly, I am interested in exploring what can be done to create more equitable and supportive environments.
 
