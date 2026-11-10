@@ -276,23 +276,18 @@
     \pdfbookmark[2]{conference}{Conference}
     \section*{Conference Presentations}
     \label{conference}
-    \newrefcontext[labelprefix=C]
-    \printbibliography[
-      type=inproceedings,
-      heading=none,
-      resetnumbers=true,
-      keyword=C
-    ]
+    \input{conferences.tex} % grouped by paper, written by hand
 
 \pdfbookmark[1]{Awards \& Honors}{awards}
 \section*{Awards \& Honors}
 \label{awards}
 \input{awards.tex}
 
-\pdfbookmark[1]{Research Experience}{exp_research}
-\section*{Research Experience}
-\label{exp_research}
-\input{exp_research.tex}
+% Research Experience section hidden (content kept in exp_research.tex)
+% \pdfbookmark[1]{Research Experience}{exp_research}
+% \section*{Research Experience}
+% \label{exp_research}
+% \input{exp_research.tex}
 
 \pdfbookmark[1]{Teaching}{teaching}
 \section*{Teaching}
@@ -370,7 +365,6 @@
 \centering
 \rule{0.25\linewidth}{0.4pt}\\
 \medskip
-% Season + year filled in automatically from the build date
-Last updated: \ifcase\month\or Spring\or Spring\or Spring\or Spring\or Spring\or Summer\or Summer\or Summer\or Fall\or Fall\or Fall\or Fall\fi~\the\year
+Last updated: Spring 2026
 
 \end{document}
