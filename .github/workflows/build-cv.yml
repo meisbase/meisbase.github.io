@@ -1,0 +1,65 @@
+# Builds the CV PDF from cv-source/ and publishes it to assets/cv/ on the website.
+# Runs whenever anything in cv-source/ changes on main, or manually from the Actions tab.
+name: Build CV
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "cv-source/**"
+      - ".github/workflows/build-cv.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write   # to commit the built PDF back
+  pages: write      # to request a GitHub Pages rebuild
+
+concurrency:
+  group: build-cv
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile LaTeX (pdflatex + biber via latexmk)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+          working_directory: cv-source
+          latexmk_shell_escape: false
+
+      - name: Copy PDF into the site
+        run: |
+          mkdir -p assets/cv
+          cp cv-source/main.pdf assets/cv/Mei-Yu_Kuo_CV.pdf
+
+      - name: Commit PDF if it changed
+        id: commit
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/cv/Mei-Yu_Kuo_CV.pdf
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "PDF unchanged."
+          else
+            git commit -m "Update CV PDF (built from cv-source)"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Ask GitHub Pages to rebuild
+        if: steps.commit.outputs.changed == 'true'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds"
+
+      - name: Keep the PDF as a downloadable run artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: cv-pdf
+          path: cv-source/main.pdf

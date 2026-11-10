@@ -4,21 +4,24 @@ layout: default
 
 {{ content }}
 
+{% assign cv_pdf = "/assets/cv/Mei-Yu_Kuo_CV.pdf" | relative_url %}
+{% assign cv_version = site.time | date: "%Y%m%d%H%M" %}
+
 <div class="row g-5 mb-5">
   <div>
     <h3 class="fw-bold border-bottom pb-3 mb-5">CV</h3>
 
-    <!-- Embedded Google Drive PDF Viewer -->
+    <!-- CV PDF, built automatically from cv-source/ by .github/workflows/build-cv.yml -->
     <div class="text-center mb-4">
-      <iframe src="https://drive.google.com/file/d/1sBacQupZnSs7cVOCiQlXe1rbXu1ZMl-X/preview" 
-              width="100%" height="600px" style="border:none;">
-      </iframe>
+      <object data="{{ cv_pdf }}?v={{ cv_version }}#view=FitH" type="application/pdf"
+              width="100%" height="800px" style="border:none;">
+        <p>Your browser can't display the PDF here.
+          <a href="{{ cv_pdf }}?v={{ cv_version }}" target="_blank">Open the CV</a> instead.</p>
+      </object>
     </div>
 
-    <!-- Fallback link -->
     <div class="text-center">
-      <a href="https://drive.google.com/file/d/1sBacQupZnSs7cVOCiQlXe1rbXu1ZMl-X/view?usp=sharing" 
-         target="_blank" class="btn btn-primary">
+      <a href="{{ cv_pdf }}?v={{ cv_version }}" target="_blank" class="btn btn-primary">
         ⬇️ Open/Download CV
       </a>
     </div>

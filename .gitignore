@@ -1,0 +1,12 @@
+# LaTeX build files in cv-source
+cv-source/*.aux
+cv-source/*.bbl
+cv-source/*.bcf
+cv-source/*.blg
+cv-source/*.fdb_latexmk
+cv-source/*.fls
+cv-source/*.log
+cv-source/*.out
+cv-source/*.run.xml
+cv-source/*.synctex.gz
+cv-source/main.pdf
