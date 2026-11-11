@@ -23,6 +23,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Compile LaTeX (pdflatex + biber via latexmk)
         uses: xu-cheng/latex-action@v3
@@ -39,17 +41,27 @@ jobs:
       - name: Commit PDF if it changed
         id: commit
         run: |
+          set -x
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/cv/Mei-Yu_Kuo_CV.pdf
+          git add -f assets/cv/Mei-Yu_Kuo_CV.pdf
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "PDF unchanged."
-          else
-            git commit -m "Update CV PDF (built from cv-source)"
-            git push
-            echo "changed=true" >> "$GITHUB_OUTPUT"
+            exit 0
           fi
+          git commit -m "Update CV PDF (built from cv-source)"
+          # Retry the push: sync with GitHub first in case main moved while building
+          for attempt in 1 2 3; do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              echo "changed=true" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+            echo "Push attempt $attempt failed; retrying in 15s..."
+            sleep 15
+          done
+          echo "::error::Could not push the built PDF after 3 attempts."
+          exit 1
 
       - name: Ask GitHub Pages to rebuild
         if: steps.commit.outputs.changed == 'true'
@@ -59,6 +71,7 @@ jobs:
         run: gh api -X POST "repos/${{ github.repository }}/pages/builds"
 
       - name: Keep the PDF as a downloadable run artifact
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: cv-pdf
